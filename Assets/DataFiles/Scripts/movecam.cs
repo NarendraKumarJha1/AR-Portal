@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movecam : MonoBehaviour
 {
-
+    public Animator myDoor;
 
     public int speed;
 
@@ -16,6 +16,8 @@ public class movecam : MonoBehaviour
 
     void Update()
     {
+        
+
         float movecam = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(0,0,movecam);
@@ -31,5 +33,13 @@ public class movecam : MonoBehaviour
             transform.Rotate(0, rotate, 0);
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Door"))
+        {
+            myDoor.Play("Opening");
+        }
     }
 }
