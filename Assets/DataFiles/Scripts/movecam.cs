@@ -39,7 +39,7 @@ public class movecam : MonoBehaviour
     {
         if (other.CompareTag("Door"))
         {
-            myDoor.Play("Opening");
+            myDoor.SetTrigger("Open");
         }
     }
 }
