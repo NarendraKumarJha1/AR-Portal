@@ -34,11 +34,11 @@ public class movecam : MonoBehaviour
         }
 
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Door"))
+        if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Entered gate");
             myDoor.SetTrigger("Open");
         }
     }
