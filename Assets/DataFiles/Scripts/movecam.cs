@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class movecam : MonoBehaviour
 {
-    public Animator myDoor;
-
+   
     public int speed;
-
-
     void Start()
     {
-        
+    
     }
 
     void Update()
@@ -34,12 +31,6 @@ public class movecam : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Entered gate");
-            myDoor.SetTrigger("Open");
-        }
-    }
+
+
 }
